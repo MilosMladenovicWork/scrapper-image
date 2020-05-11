@@ -6,6 +6,7 @@
   <title>Document</title>
 </head>
 <body>
+  <input type='url' name='url' placeholder='URL'>
   <a href='#' id='fetch'>Fetch</a>
 </body>
 
@@ -15,7 +16,8 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#fetch').addEventListener('click', (e) => {
       e.preventDefault()
-      fetch('https://scrapper-image.herokuapp.com', {
+      let input = document.querySelector('[name="url"]').nodeValue;
+      fetch(`https://scrapper-image.herokuapp.com/?url=${input}`, {
           headers:{
             'Accept':'application/json',
             'Content-Type':'application/json'
