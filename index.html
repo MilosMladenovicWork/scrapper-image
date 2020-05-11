@@ -15,15 +15,21 @@
   let urls = []
 
   document.querySelector('#fetch').addEventListener('click', () => {
-    fetch('localhost:3000')
+    fetch('https://scrapper-image.herokuapp.com/')
       .then(data => data.json())
-      .then(data => urls = data)
+      .then(data => {
+        urls = data
+        urls.forEach(url => {
+          let image = document.createElement('img')
+          image.setAttribute('src', url)
+          body.appendChild(image)
+        })
+        
+      })
       .catch(e => {
         console.log(e)
       })
     console.log(urls)
   })
-
-  // fetch('localhost:3000').then()
 </script>
 </html>
