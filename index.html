@@ -31,6 +31,7 @@
             let downloadButton = document.createElement('a')
             downloadButton.setAttribute('href', url)
             downloadButton.setAttribute('download', true)
+            document.body.appendChild(downloadButton)
 
             let image = document.createElement('img')
             image.setAttribute('src', url)
