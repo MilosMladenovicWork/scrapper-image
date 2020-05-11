@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src='./image.jpg'/>
+  <a href='#' id='fetch'>Fetch</a>
+  <a href='./image.jpg' download>Download</a>
+</body>
+
+<script>
+  let urls = []
+
+  document.querySelector('#fetch').addEventListener('click', () => {
+    fetch('localhost:3000')
+      .then(data => data.json())
+      .then(data => urls = data)
+      .catch(e => {
+        console.log(e)
+      })
+    console.log(urls)
+  })
+
+  // fetch('localhost:3000').then()
+</script>
+</html>
