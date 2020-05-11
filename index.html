@@ -40,6 +40,15 @@
         })
       console.log(urls)
     })
+
+    let downloadButton = document.querySelector('[download]');
+    downloadButton.addEventListener('click', () => {
+      urls.forEach(url => {
+        downloadButton.setAttribute('href', url)
+        downloadButton.click()
+      })
   })
+  }
+  )
 </script>
 </html>
