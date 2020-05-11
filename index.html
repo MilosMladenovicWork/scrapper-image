@@ -14,10 +14,11 @@
   let urls = []
 
   document.querySelector('#fetch').addEventListener('click', () => {
-    fetch('https://scrapper-image.herokuapp.com/')
+    fetch('https://scrapper-image.herokuapp.com')
       .then(data => data.json())
       .then(data => {
         urls = data
+        console.log(urls)
         urls.forEach(url => {
           let image = document.createElement('img')
           image.setAttribute('src', url)
