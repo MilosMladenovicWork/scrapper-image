@@ -16,7 +16,8 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#fetch').addEventListener('click', (e) => {
       e.preventDefault()
-      let input = document.querySelector('[name="url"]').nodeValue;
+      let input = document.querySelector('[name="url"]').value;
+      console.log(input)
       fetch(`https://scrapper-image.herokuapp.com/?url=${input}`, {
           headers:{
             'Accept':'application/json',
@@ -30,14 +31,9 @@
           urls = data
           console.log(urls)
           urls.forEach(url => {
-            let downloadButton = document.createElement('a')
-            downloadButton.setAttribute('href', url)
-            downloadButton.setAttribute('download', true)
-            document.body.appendChild(downloadButton)
-
             let image = document.createElement('img')
             image.setAttribute('src', url)
-            downloadButton.appendChild(image)
+            document.body.appendChild(image)
 
           })
           
