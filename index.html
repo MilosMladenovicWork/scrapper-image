@@ -13,7 +13,8 @@
 <script>
   let urls = []
 
-  document.querySelector('#fetch').addEventListener('click', () => {
+  document.querySelector('#fetch').addEventListener('click', (e) => {
+    e.preventDefault()
     fetch('https://scrapper-image.herokuapp.com')
       .then(data => data.json())
       .then(data => {
