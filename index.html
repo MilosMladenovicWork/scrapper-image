@@ -15,7 +15,14 @@
 
   document.querySelector('#fetch').addEventListener('click', (e) => {
     e.preventDefault()
-    fetch('https://scrapper-image.herokuapp.com')
+    fetch('https://scrapper-image.herokuapp.com', {
+        headers:{
+          'Accept':'application/json',
+          'Content-Type':'application/json'
+        },
+        method:'POST',
+        mode:'cors'
+      })
       .then(data => data.json())
       .then(data => {
         urls = data
