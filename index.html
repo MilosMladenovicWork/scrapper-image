@@ -7,7 +7,6 @@
 </head>
 <body>
   <a href='#' id='fetch'>Fetch</a>
-  <a href='./image.jpg' download>Download</a>
 </body>
 
 <script>
@@ -29,9 +28,14 @@
           urls = data
           console.log(urls)
           urls.forEach(url => {
+            let downloadButton = document.createElement('a')
+            downloadButton.setAttribute('href', url)
+            downloadButton.setAttribute('download', true)
+
             let image = document.createElement('img')
             image.setAttribute('src', url)
-            document.body.appendChild(image)
+            downloadButton.appendChild(image)
+
           })
           
         })
@@ -45,7 +49,6 @@
     downloadButton.addEventListener('click', () => {
       urls.forEach(url => {
         downloadButton.setAttribute('href', url)
-        downloadButton.click()
       })
   })
   }
