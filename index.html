@@ -12,32 +12,34 @@
 
 <script>
   let urls = []
-
-  document.querySelector('#fetch').addEventListener('click', (e) => {
-    e.preventDefault()
-    fetch('https://scrapper-image.herokuapp.com', {
-        headers:{
-          'Accept':'application/json',
-          'Content-Type':'application/json'
-        },
-        method:'GET',
-        mode:'cors'
-      })
-      .then(data => data.json())
-      .then(data => {
-        urls = data
-        console.log(urls)
-        urls.forEach(url => {
-          let image = document.createElement('img')
-          image.setAttribute('src', url)
-          body.appendChild(image)
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#fetch').addEventListener('click', (e) => {
+      e.preventDefault()
+      fetch('https://scrapper-image.herokuapp.com', {
+          headers:{
+            'Accept':'application/json',
+            'Content-Type':'application/json'
+          },
+          method:'GET',
+          mode:'cors'
         })
-        
-      })
-      .catch(e => {
-        console.log(e)
-      })
-    console.log(urls)
+        .then(data => data.json())
+        .then(data => {
+          urls = data
+          console.log(urls)
+          urls.forEach(url => {
+            let image = document.createElement('img')
+            image.setAttribute('src', url)
+            document.body.appendChild(image)
+          })
+          
+        })
+        .catch(e => {
+          console.log(e)
+        })
+      console.log(urls)
+    })
   })
 </script>
 </html>
