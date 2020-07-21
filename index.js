@@ -65,7 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(e => {
         dataLoading = false
         if(!dataLoading){
-          document.querySelector('.status-container').removeChild(document.querySelector('.loading-spinner'))
+          if(document.querySelector('.loading-spinner')){
+            document.querySelector('.status-container').removeChild(document.querySelector('.loading-spinner'))
+          }
           let errorStatus = document.createElement('span')
           errorStatus.innerText = `❌ ${e}`
           let alert = document.createElement('div')
