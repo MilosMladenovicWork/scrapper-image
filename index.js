@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(statusContainer)
     if(dataLoading){
       let spinnerBorder = document.createElement('div')
-      spinnerBorder.className = 'loading-spinner spinner-border'
+      spinnerBorder.className = 'loading-spinner spinner-border text-primary'
       spinnerBorder.setAttribute('role', 'status')
       let spinnerSpan = document.createElement('span')
       spinnerSpan.className='sr-only'
