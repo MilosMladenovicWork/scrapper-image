@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
           successStatus.innerText = `✔ Fetched`
           let alert = document.createElement('div')
           alert.className = 'alert alert-success'
-          alert.appendChild(errorStatus)
+          alert.appendChild(successStatus)
           document.querySelector('.status-container').appendChild(alert)
         }
         urls = data
