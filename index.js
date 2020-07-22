@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         urls = data
         console.log(urls)
+        let imgBox = document.createElement('div')
+        document.body.appendChild(imgBox)
+        imgBox.className = 'img-box container-fluid row row-cols-3'
         urls.forEach(url => {
-          let imgBox = document.createElement('div')
-          document.body.appendChild(imgBox)
-          imgBox.className = 'img-box container-fluid row row-cols-3'
           let image = document.createElement('img')
           image.className = 'col'
           image.setAttribute('src', url)
