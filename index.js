@@ -84,3 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }
 )
+
+let imageDivElements = document.querySelectorAll('.img-box > div')
+
+for(let numOfElement = 0; numOfElement < imageDivElements.length; numOfElement++){
+  let node = imageDivElements[numOfElement]
+  node.addEventListener('click', () => {
+    node.parentNode.removeChild(node)
+  })
+}
