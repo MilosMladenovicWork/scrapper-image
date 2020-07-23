@@ -31,7 +31,8 @@ function fetchAndDisplayData(dataLoading, urls, e){
     fetch(`https://scrapper-image.herokuapp.com/?url=${input}`, {
         headers:{
           'Accept':'application/json',
-          'Content-Type':'application/json'
+          'Content-Type':'application/json',
+          'Access-Control-Allow-Origin': '*'
         },
         method:'GET',
         mode:'cors'
