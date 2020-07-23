@@ -55,10 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(imgBox)
         imgBox.className = 'img-box container-fluid row row-cols-3'
         urls.forEach(url => {
+          let imageContainer = document.createElement('div')
           let image = document.createElement('img')
-          image.className = 'col shadow offset-1'
+          image.className = 'col shadow m-2'
           image.setAttribute('src', url)
-          document.querySelector('.img-box').appendChild(image)
+          imageContainer.appendChild(image)
+          document.querySelector('.img-box').appendChild(imageContainer)
         })
         
       })
