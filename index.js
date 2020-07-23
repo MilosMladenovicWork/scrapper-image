@@ -16,7 +16,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
     console.log(input)
     dataLoading = true;
     let statusContainer = document.createElement('div')
-    statusContainer.className = 'status-container justify-content-center row'
+    statusContainer.className = 'status-container justify-content-center row p-3'
     document.body.appendChild(statusContainer)
     if(dataLoading){
       let spinnerBorder = document.createElement('div')
@@ -52,7 +52,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
         console.log(urls)
         let imgBox = document.createElement('div')
         document.body.appendChild(imgBox)
-        imgBox.className = 'img-box container-fluid row row-cols-3'
+        imgBox.className = 'img-box container-fluid row row-cols-5'
         urls.forEach(url => {
           let imageContainer = document.createElement('div')
           let image = document.createElement('img')
