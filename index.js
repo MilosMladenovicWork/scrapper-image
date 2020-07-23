@@ -62,6 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
           imageContainer.appendChild(image)
           document.querySelector('.img-box').appendChild(imageContainer)
         })
+        let imageDivElements = document.querySelectorAll('.img-box > div')
+
+        for(let numOfElement = 0; numOfElement < imageDivElements.length; numOfElement++){
+          let node = imageDivElements[numOfElement]
+          node.addEventListener('click', () => {
+            node.parentNode.removeChild(node)
+          })
+        }
         
       })
       .catch(e => {
@@ -84,12 +92,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }
 )
-
-let imageDivElements = document.querySelectorAll('.img-box > div')
-
-for(let numOfElement = 0; numOfElement < imageDivElements.length; numOfElement++){
-  let node = imageDivElements[numOfElement]
-  node.addEventListener('click', () => {
-    node.parentNode.removeChild(node)
-  })
-}
