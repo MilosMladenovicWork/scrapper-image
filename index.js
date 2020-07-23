@@ -1,9 +1,8 @@
 let dataLoading = false
 let urls = []
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('#fetch').addEventListener('click', (e) => {
-    e.preventDefault()
+function fetchAndDisplayData(dataLoading, urls, e){
+  e.preventDefault()
     if(document.querySelector('.img-box')){
       document.body.removeChild(document.querySelector('.img-box'))
     }
@@ -88,7 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(e)
       })
     console.log(urls)
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#fetch').addEventListener('click', (event) => {
+    fetchAndDisplayData(dataLoading, urls, event)
   })
 
 }
 )
+
+document.querySelector('.input-url').addEventListener('keyup', (event) => {
+  if(event.keyCode === 13){
+    fetchAndDisplayData(dataLoading, urls, event)
+  }
+})
