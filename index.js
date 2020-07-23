@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imgBox.className = 'img-box container-fluid row row-cols-3'
         urls.forEach(url => {
           let image = document.createElement('img')
-          image.className = 'col'
+          image.className = 'col shadow'
           image.setAttribute('src', url)
           document.querySelector('.img-box').appendChild(image)
         })
