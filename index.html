@@ -37,11 +37,12 @@
     .input-area{
       position:sticky;
       top:0;
+      z-index:2;
     }
   </style>
 </head>
 <body class='container-fluid'>
-  <div class='input-area row align-items-center justify-content-center p-4 shadow-sm'>
+  <div class='input-area row align-items-center justify-content-center p-4 shadow-sm bg-white'>
     <input type='url' name='url' placeholder='URL' class='input-url m-1 rounded'>
     <button id='fetch' class='btn btn-primary btn-sm'>Fetch</button>
   </div>
