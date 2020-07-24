@@ -82,7 +82,11 @@ function fetchAndDisplayData(dataLoading, urls, e){
           progressBar.style = `width:${width}%`
         }
 
-        Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { imagesLoaded += 1 ;loadingBarFill(imagesLoaded / allPicsNum * 100);img.onload = img.onerror = resolve; }))).then(() => {
+        Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = function() {
+          imagesLoaded += 1 ;
+          loadingBarFill(imagesLoaded / allPicsNum * 100);
+          return resolve()
+        }; }))).then(() => {
           console.log('images finished loading');
         }); 
 
