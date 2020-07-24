@@ -72,14 +72,14 @@ function fetchAndDisplayData(dataLoading, urls, e){
         let imagesLoaded = 0
 
         let progressContainer = document.createElement('div')
-        progressContainer.className = 'progress'
+        progressContainer.className = 'image-loading-progress progress'
         let progressBar = document.createElement('div')
         progressBar.className = 'progress-bar progress-bar-striped progress-bar-animated'
         progressContainer.appendChild(progressBar)
         document.body.appendChild(progressContainer)
 
         let loadingBarFill = (width) => {
-          progressBar.style = `width:${width}% ; opacity:1`
+          progressBar.style = `width:${width}%`
           if(width > 99){
             setTimeout(() => progressContainer.style = 'transition:0.5s;opacity:0', 1000)
           }
