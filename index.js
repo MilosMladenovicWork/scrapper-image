@@ -45,6 +45,8 @@ function fetchAndDisplayData(dataLoading, urls, e){
       })
       .then(data => data.json())
       .then(data => {
+        document.querySelector('.input-url').focus();
+
         dataLoading = false
         if(!dataLoading){
           document.querySelector('.status-container').removeChild(document.querySelector('.loading-spinner'))
@@ -114,6 +116,8 @@ function fetchAndDisplayData(dataLoading, urls, e){
         
       })
       .catch(e => {
+        document.querySelector('.input-url').focus();
+        
         dataLoading = false
         if(!dataLoading){
           if(document.querySelector('.loading-spinner')){
