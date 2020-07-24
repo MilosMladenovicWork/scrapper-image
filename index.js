@@ -69,9 +69,9 @@ function fetchAndDisplayData(dataLoading, urls, e){
 
         let allPicsNum = allPics.length
 
-        console.log(allPicsNum)
+        let imagesLoaded = 0
 
-        Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+        Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { imagesLoaded + 1; console.log(imagesLoaded) ;img.onload = img.onerror = resolve; }))).then(() => {
           console.log('images finished loading');
         }); 
 
