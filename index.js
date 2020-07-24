@@ -64,6 +64,11 @@ function fetchAndDisplayData(dataLoading, urls, e){
           imageContainer.appendChild(image)
           document.querySelector('.img-box').appendChild(imageContainer)
         })
+
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+          console.log('images finished loading');
+        }); 
+
         let imageDivElements = document.querySelectorAll('.img-box > div')
 
         for(let numOfElement = 0; numOfElement < imageDivElements.length; numOfElement++){
