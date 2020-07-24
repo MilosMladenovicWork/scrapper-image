@@ -62,7 +62,6 @@ function fetchAndDisplayData(dataLoading, urls, e){
         urls.forEach(url => {
           let imageContainer = document.createElement('div')
           let image = document.createElement('img')
-          image.setAttribute('title', '❌ Click to remove image')
           image.className = 'col shadow-sm m-3'
           image.setAttribute('src', url)
           imageContainer.appendChild(image)
