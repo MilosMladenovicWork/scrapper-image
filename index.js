@@ -12,6 +12,9 @@ function fetchAndDisplayData(dataLoading, urls, e){
     if(document.querySelector('.status-container')){
         document.body.removeChild(document.querySelector('.status-container'))
     }
+    if(document.querySelector('.image-loading-progress')){
+      document.querySelector('.image-loading-progress').parentNode.removeChild(document.querySelector('.image-loading-progress'))
+    }
     let input = document.querySelector('[name="url"]').value;
     console.log(input)
     dataLoading = true;
