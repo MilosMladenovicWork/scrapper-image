@@ -65,7 +65,13 @@ function fetchAndDisplayData(dataLoading, urls, e){
           document.querySelector('.img-box').appendChild(imageContainer)
         })
 
-        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+        let allPics = Array.from(document.images)
+
+        let allPicsNum = allPics.length
+
+        console.log(allPicsNum)
+
+        Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
           console.log('images finished loading');
         }); 
 
