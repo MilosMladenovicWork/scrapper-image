@@ -66,6 +66,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
           image.setAttribute('src', url)
           imageContainer.appendChild(image)
           let tooltip = document.createElement('p')
+          tooltip.className = 'alert alert-danger'
           tooltip.innerText = '❌Click to remove image'
           imageContainer.appendChild(tooltip)
           document.querySelector('.img-box').appendChild(imageContainer)
