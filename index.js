@@ -76,9 +76,9 @@ function fetchAndDisplayData(dataLoading, urls, e){
           progressContainer.class = 'progress'
           let progressBar = document.createElement('div')
           progressBar.class = 'progress-bar progress-bar-striped progress-bar-animated'
-          progressBar.style = `${width}%`
+          progressBar.style = `width:${width}%`
           progressContainer.appendChild(progressBar)
-          document.appendChild(progressContainer)
+          document.body.appendChild(progressContainer)
         }
 
         Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { imagesLoaded += 1 ;loadingBar(imagesLoaded / allPicsNum * 100);img.onload = img.onerror = resolve; }))).then(() => {
