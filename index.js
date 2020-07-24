@@ -61,6 +61,9 @@ function fetchAndDisplayData(dataLoading, urls, e){
         imgBox.className = 'img-box container-fluid row row-cols-5'
         urls.forEach(url => {
           let imageContainer = document.createElement('div')
+          imageContainer.setAttribute('data-toggle', 'tooltip')
+          imageContainer.setAttribute('data-placement', 'bottom')
+          imageContainer.setAttribute('title', '❌ Click to remove image')
           let image = document.createElement('img')
           image.className = 'col shadow-sm m-3'
           image.setAttribute('src', url)
