@@ -27,6 +27,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
       spinnerSpan.innerText = 'Loading...'
       spinnerBorder.appendChild(spinnerSpan)
       document.querySelector('.status-container').appendChild(spinnerBorder)
+      document.title = 'Fetching...'
     }
     fetch(`https://scrapper-image.herokuapp.com/?url=${input}`, {
         headers:{
@@ -48,6 +49,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
           alert.className = 'alert alert-success'
           alert.appendChild(successStatus)
           document.querySelector('.status-container').appendChild(alert)
+          document.title = '✔Fetched'
         }
         urls = data
         console.log(urls)
@@ -84,6 +86,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
           alert.className = 'alert alert-danger'
           alert.appendChild(errorStatus)
           document.querySelector('.status-container').appendChild(alert)
+          document.title = '❌Failed to fetch'
         }
         console.log(e)
       })
