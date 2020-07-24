@@ -1,6 +1,8 @@
 let dataLoading = false
 let urls = []
 
+document.querySelector('.input-url').focus();
+
 function fetchAndDisplayData(dataLoading, urls, e){
   e.preventDefault()
     if(document.querySelector('.img-box')){
