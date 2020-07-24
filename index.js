@@ -62,7 +62,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
         console.log(urls)
         let imgBox = document.createElement('div')
         document.body.appendChild(imgBox)
-        imgBox.className = 'img-box container-fluid row row-cols-5'
+        imgBox.className = 'img-box container-fluid row row-cols-1 row-cols-sm-3 row-cols-xl-5'
         urls.forEach(url => {
           let imageContainer = document.createElement('div')
           imageContainer.className = 'col col-px-2 mt-4'
