@@ -65,6 +65,9 @@ function fetchAndDisplayData(dataLoading, urls, e){
           image.className = 'col shadow-sm m-3'
           image.setAttribute('src', url)
           imageContainer.appendChild(image)
+          let tooltip = document.createElement('p')
+          tooltip.innerText = '❌Click to remove image'
+          imageContainer.appendChild(tooltip)
           document.querySelector('.img-box').appendChild(imageContainer)
         })
 
