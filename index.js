@@ -81,7 +81,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
         let loadingBarFill = (width) => {
           progressBar.style = `width:${width}% ; opacity:1`
           if(width > 99){
-            setTimeout(() => progressBar.style = 'transition:0.5s;opacity:0', 1000)
+            setTimeout(() => progressContainer.style = 'transition:0.5s;opacity:0', 1000)
           }
         }
 
