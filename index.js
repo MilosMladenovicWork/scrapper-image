@@ -79,7 +79,10 @@ function fetchAndDisplayData(dataLoading, urls, e){
         document.body.appendChild(progressContainer)
 
         let loadingBarFill = (width) => {
-          progressBar.style = `width:${width}%`
+          progressBar.style = `width:${width}% ; opacity:1`
+          if(width > 99){
+            setTimeout(() => progressBar.style = 'transition:0.5s;opacity:0', 1000)
+          }
         }
 
         Promise.all(allPics.filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = function() {
