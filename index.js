@@ -61,7 +61,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
         imgBox.className = 'img-box container-fluid row row-cols-5'
         urls.forEach(url => {
           let imageContainer = document.createElement('div')
-          imageContainer.className = 'col-px-3'
+          imageContainer.className = 'col col-px-2 mt-2'
           let image = document.createElement('img')
           image.className = 'col shadow-sm'
           image.setAttribute('src', url)
