@@ -63,7 +63,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
           let imageContainer = document.createElement('div')
           imageContainer.className = 'col-px-1'
           let image = document.createElement('img')
-          image.className = 'col shadow-sm m-3'
+          image.className = 'col shadow-sm'
           image.setAttribute('src', url)
           imageContainer.appendChild(image)
           let tooltip = document.createElement('p')
