@@ -18,8 +18,13 @@ function fetchAndDisplayData(dataLoading, urls, e){
       document.querySelector('.image-loading-progress').parentNode.removeChild(document.querySelector('.image-loading-progress'))
     }
     let input = document.querySelector('[name="url"]').value;
-    console.log(input)
+    
+    let fetchFeaturedImages = document.querySelector('[name="fetchFeaturedImages"]').checked;
+    
+    console.log(fetchFeaturedImages)
+
     dataLoading = true;
+
     let statusContainer = document.createElement('div')
     statusContainer.className = 'status-container justify-content-center row p-3'
     document.body.appendChild(statusContainer)
@@ -34,7 +39,14 @@ function fetchAndDisplayData(dataLoading, urls, e){
       document.querySelector('.status-container').appendChild(spinnerBorder)
       document.title = 'Fetching...'
     }
-    fetch(`https://scrapper-image.herokuapp.com/?url=${input}`, {
+
+    let fetchURL = `https://scrapper-image.herokuapp.com/?url=${input}`
+    
+    if(fetchFeaturedImages){
+      fetchURL = `https://scrapper-image.herokuapp.com/fetchFeaturedImages/?url=${input}`
+    }
+
+    fetch(fetchURL, {
         headers:{
           'Accept':'application/json',
           'Content-Type':'application/json',
