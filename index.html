@@ -42,13 +42,24 @@
   </style>
 </head>
 <body class='container-fluid'>
-  <div class='input-area row align-items-center justify-content-center p-4 shadow-sm bg-white'>
-    <label>Fetch All Images(mobile and desktop)</label>
-    <input type='checkbox' name='fetchFeaturedImages' class='input-url m-1 rounded'>
-  </div>
-  <div class='input-area row align-items-center justify-content-center p-4 shadow-sm bg-white'>
-    <input type='url' name='url' placeholder='URL' class='input-url m-1 rounded'>
-    <button id='fetch' class='btn btn-primary btn-sm'>Fetch</button>
+  <div class='input-area col-12 align-items-center justify-content-center p-4 shadow-sm bg-white'>
+    <div class='column align-items-center justify-content-center'>
+      <div class='row align-items-center justify-content-center'>
+        <label>Fetch All Images(mobile and desktop)</label>
+        <input type='checkbox' name='fetchFeaturedImages' class='input-url m-1 rounded'>
+      </div>
+      <div class='row align-items-center justify-content-center'>
+        <label>
+          Attribute name(separated by comma)
+          <input type='text' name='featuredImagesSources' placeholder='data-mobile-src,data-desktop-src' class='input-url m-1 rounded'>  
+        </label>
+      </div>
+    </div>
+    <hr/>
+    <div class='row align-items-center justify-content-center'>
+      <input type='url' name='url' placeholder='URL' class='input-url m-1 rounded'>
+      <button id='fetch' class='btn btn-primary btn-sm'>Fetch</button>
+    </div>
   </div>
   <div class='p-2 rounded border border-secondary text-secondary' style='position:fixed;right:30px;bottom:30px;z-index:2;'>
     © 2020 Milos Mladenovic

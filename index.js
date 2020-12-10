@@ -20,8 +20,8 @@ function fetchAndDisplayData(dataLoading, urls, e){
     let input = document.querySelector('[name="url"]').value;
     
     let fetchFeaturedImages = document.querySelector('[name="fetchFeaturedImages"]').checked;
-    
-    console.log(fetchFeaturedImages)
+
+    let featuredImagesSources = document.querySelector('[name="featuredImagesSources"]').value;
 
     dataLoading = true;
 
@@ -43,7 +43,7 @@ function fetchAndDisplayData(dataLoading, urls, e){
     let fetchURL = `https://scrapper-image.herokuapp.com/?url=${input}`
     
     if(fetchFeaturedImages){
-      fetchURL = `https://scrapper-image.herokuapp.com/fetchFeaturedImages/?url=${input}`
+      fetchURL = `https://scrapper-image.herokuapp.com/fetchFeaturedImages/?url=${input}&src=${featuredImagesSources}`
     }
 
     fetch(fetchURL, {
