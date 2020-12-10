@@ -76,17 +76,20 @@ function fetchAndDisplayData(dataLoading, urls, e){
         document.body.appendChild(imgBox)
         imgBox.className = 'img-box container-fluid row row-cols-1 row-cols-sm-3 row-cols-xl-5'
         urls.forEach(url => {
-          let imageContainer = document.createElement('div')
-          imageContainer.className = 'col col-px-2 mt-4'
-          let image = document.createElement('img')
-          image.className = 'col shadow-sm rounded'
-          image.setAttribute('src', url)
-          imageContainer.appendChild(image)
-          let tooltip = document.createElement('p')
-          tooltip.className = 'alert alert-danger'
-          tooltip.innerText = '❌Click to remove image'
-          imageContainer.appendChild(tooltip)
-          document.querySelector('.img-box').appendChild(imageContainer)
+          let lazyLoadImage = url.match(/LazyLoad/gi)
+          if(!lazyLoadImage){
+            let imageContainer = document.createElement('div')
+            imageContainer.className = 'col col-px-2 mt-4'
+            let image = document.createElement('img')
+            image.className = 'col shadow-sm rounded'
+            image.setAttribute('src', url)
+            imageContainer.appendChild(image)
+            let tooltip = document.createElement('p')
+            tooltip.className = 'alert alert-danger'
+            tooltip.innerText = '❌Click to remove image'
+            imageContainer.appendChild(tooltip)
+            document.querySelector('.img-box').appendChild(imageContainer)
+          }
         })
 
         let allPics = Array.from(document.images)
